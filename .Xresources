@@ -1,0 +1,169 @@
+Emacs.font: DejaVu Sans Mono:pixelsize=13
+Emacs.FontBackend: xft
+
+Xft.hinting: true
+Xft.hintstyle: hintfull
+Xft.antialias: rgba
+Xft.rgba: rgb
+
+URxvt*perl-ext: matcher
+URxvt*matcher.button:   1
+URxvt*urlLauncher: chromium
+URxvt*secondaryScroll: true
+URxvt*loginShell: false
+URxvt*font: xft:DejaVu Sans Mono:pixelsize=13
+URxvt*letterSpace: -1
+
+XDvi.foreground: black
+XDvi.background: white
+
+dzen2.foreground: #eeeeee
+dzen2.background: #222222
+dzen2.font: xft:ProggyClean:pixelsize=12
+
+!!! Gentoo colors
+*background: black
+*foreground: lightgray
+!*foreground: #a8a8a8
+
+!*color0: #000000
+!*color8: #686868
+
+!*color1: #b21818
+!*color9: #FF5454
+
+!*color2: #18b218
+!*color10: #54FF54
+
+!*color3: #BE5F00
+!*color11: #FFFF54
+
+!*color4: #6D85BA
+!*color12: #73A5FF
+
+!*color5: #b218b2
+!*color13: #FF54FF
+
+!*color6: #18b2b2
+!*color14: #54FFFF
+
+!*color7: #b2b2b2
+!*color15: #FFFFFF
+
+
+!! Gamma colors
+!*foreground:       #BBBBBB
+!!*foreground:       #FFFFFF
+!*background:       #191919
+!*colorBD:          #EEEEEF
+!! Black
+!*color0:           #404040
+!*color8:           #252525
+!! Red
+!*color1:           #C12121
+!*color9:           #E50E0E
+!! Green
+!*color2:           #75BD00
+!*color10:          #89b83f
+!! Yellow
+!*color3:           #EDD76A
+!*color11:          #efef60
+!! Blue
+!*color4:           #4F6FAE
+!*color12:          #3F6FD0
+!! Magenta
+!*color5:           #706c9a
+!*color13:          #826ab1
+!! Cyan
+!*color6:           #508695
+!*color14:          #a1cdcd
+!! White
+!*color7:           #BBBBBB
+!*color15:          #EEEEEF
+
+
+!!Tango colors
+!*background:       rgba:0000/0000/0000/cccc
+!*foreground:       lightgray
+!!Black
+!*color0:  #2E3436
+!*color8:  #555753
+!!Red
+!*color1:  #CC0000
+!*color9:  #EF2929
+!!Green
+!*color2:  #4E9A06
+!*color10: #8AE234
+!!Yellow
+!*color3:  #C4A000
+!*color11: #FCE94F
+!!Blue
+!*color4:  #3465A4
+!*color12: #729FCF
+!!Purple
+!*color5:  #75507B
+!*color13: #AD7FA8
+!!Cyan
+!*color6:  #06989A
+!*color14: #34E2E2
+!!White
+!*color7:  #D3D7CF
+!*color15: #EEEEEC
+
+
+!! Deeper Tango colors
+! *foreground:       #bbbbbb
+! *background:       #000000
+! ! Black
+! !*color0:      #555753
+! *color0:      #181818
+! *color8:      #71a3b7
+! ! Red
+! *color1:      #ba8b8b
+! *color9:      #e5505f
+! ! Green
+! *color2:     #86af80
+! *color10:      #8cba87
+! ! Yellow
+! *color3:     #c6d01e
+! *color11:      #e0d95c
+! ! Blue
+! *color4:     #3c8ec4
+! *color12:      #5899c4
+! ! Purple
+! *color5:     #9a70b2
+! *color13:      #ad73ba
+! ! Cyan
+! *color6:     #338eaa
+! *color14:      #9fc1cc
+! ! White
+! *color7:      #bbbbbb
+! *color15:     #f7f7f2
+
+!*background:     #121212
+!!black
+!*color0:         #353535
+!*color8:         #666666
+!!red
+!*color1:         #AE4747
+!*color9:         #EE6363
+!!green
+!*color2:         #556B2F
+!*color10:        #9ACD32
+!!brown/yellow
+!*color3:         #DAA520
+!*color11:        #FFC125
+!!blue
+!*color4:         #6F99B4
+!*color12:        #7C96B0
+!!magenta
+!*color5:         #8B7B8B
+!*color13:        #D8BFD8
+!!cyan
+!*color6:         #A7A15E
+!*color14:        #F0E68C
+!!white
+!*color7:         #DDDDDD
+!*color15:        #FFFFFF
+!
+!*foreground: #DDDDDD

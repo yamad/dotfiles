@@ -1,0 +1,11 @@
+--type-set
+racket=.rkt
+
+--type-set
+igor=.ipf
+
+--type-set
+context=.mkiv
+
+--type-set
+orgmode=.org
