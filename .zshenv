@@ -1,3 +1,5 @@
 ZDOTDIR=$HOME/.zsh
-
-source $ZDOTDIR/.zshenv
+if [ -n "$DISPLAY" ]; then
+    BROWSER=chromium
+    export BROWSER
+fi
