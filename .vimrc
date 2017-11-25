@@ -3,12 +3,7 @@ set softtabstop=4
 set tabstop=4
 set shiftwidth=4
 set autoindent
-"set smartindent
 set hlsearch
-colorscheme desert256
-if &diff
-    colorscheme evening
-endif
 
 " set filetype detection, syntax highlighting, and filetype omnicompletion
 filetype on
@@ -24,7 +19,7 @@ set printoptions=paper:letter
 set whichwrap=h,l
 " makes backspace key more powerful
 set backspace=indent,eol,start
-"set nu
+set nu
 set foldenable
 set foldlevel=200
 set textwidth=78
@@ -32,6 +27,8 @@ set textwidth=78
 set hidden
 " show status line
 set laststatus=2
+" search down into subfolders
+set path+=**
 " show complete options
 set wildmenu
 " show ruler
@@ -51,23 +48,21 @@ autocmd BufRead *.module set filetype=php
 augroup END
 endif
 
-call pathogen#infect()
-
 "" Plugins (vim-plug manager)
 call plug#begin()
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
-Plug 'scrooloose/syntastic'
-Plug 'valloric/youcompleteme'
 Plug 'epmatsw/ag.vim'
 Plug 'easymotion/vim-easymotion'
-Plug 'tomasr/molokai'
 Plug 'morhetz/gruvbox'
-Plug 'nanotech/jellybeans.vim', { 'tag':'v1.6' }
 Plug 'chriskempson/base16-vim'
 Plug 'Zenburn'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'} " fuzzy find
+if has('nvim')
+  source ~/.vim/nvim_plugins.vim
+endif
 call plug#end()
 
 " ========== Mappings ==========
@@ -90,6 +85,9 @@ imap <A-UP> <ESC>gki
 " search visually selected text with g/ or g?
 vnoremap <silent> g/ y/<C-R>=escape(@", '\\/.*$^~[]')<CR><CR>
 vnoremap <silent> g? y?<C-R>=escape(@", '\\/.*$^~[]')<CR><CR>
+
+" extra ESC keys
+imap jk <Esc>
 
 " C settings
 " set make program
@@ -135,3 +133,8 @@ au FileType mail set tw=60
 "au BufRead,BufNewFile * syntax match Search /\%<81v.\%>77v/
 "au BufRead,BufNewFile * syntax match ErrorMsg /\%>80v.\+/
 
+colorscheme desert256
+if &diff
+    colorscheme evening
+endif
+colorscheme base16-default-dark
