@@ -7,36 +7,9 @@ fi
 
 zmodload zsh/zprof  # profiling
 
-# Path to your oh-my-zsh configuration.
-#ZSH=$HOME/.oh-my-zsh
-
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
-#ZSH_THEME="jyh"
-
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
-# Set to this to use case-sensitive completion
-#CASE_SENSITIVE="true"
-
-# Comment this out to disable weekly auto-update checks
-# DISABLE_AUTO_UPDATE="true"
-
-# Uncomment following line if you want to disable colors in ls
-# DISABLE_LS_COLORS="true"
-
-# Uncomment following line if you want to disable autosetting terminal title.
-# DISABLE_AUTO_TITLE="true"
-
-# Uncomment following line if you want red dots to be displayed while waiting for completion
-COMPLETION_WAITING_DOTS="true"
-
 # function path for zsh
 fpath=( ~/.zsh/lib $fpath )
+fpath=( ~/.zsh/completions $fpath )
 
 autoload -U compinit
 compinit -i
@@ -48,37 +21,25 @@ autoload -U zmv
 
 bindkey -e # emacs bindings
 
-# nvm setup
-export NVM_LAZY_LOAD=true
-export NVM_AUTO_USE=true
-
 source ~/.zsh/lib/git.zsh
-
-#source ~/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-#source ~/.zsh/plugins/zsh-nvm/zsh-nvm.plugin.zsh
-#source ~/.zsh/plugins/git.plugin.zsh
 source ~/.zsh/jyh.zsh-theme
+#source ~/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+#source ~/.zsh/plugins/git.plugin.zsh
 
 source ~/.zsh/aliases.zsh
 source ~/.zsh/functions.zsh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# lazy-load wrapper
-function pyenv() {
-    eval "$( command pyenv init - )"
-    pyenv "$@"
-	if which pyenv-virtualenv-init > /dev/null; then 
-		eval "$(pyenv virtualenv-init -)"; 
-	fi
-}
-
-source ~/perl5/perlbrew/etc/bashrc
+eval "$( pyenv init - )"	    # python version manager
+eval "$( pyenv virtualenv-init - )" # python virtualenv
+eval "$( rbenv init - )"	    # ruby version manager
+eval "$( nodenv init - )"	    # node.js version manager
+source ~/perl5/perlbrew/etc/bashrc  # perl version manager
 
 # keychain for ssh keys
 keychain --nogui -Q ~/.ssh/id_rsa ~/.ssh/jyh
 source ~/.keychain/$HOST-sh > /dev/null
-
 
 if [[ "$PROFILE_STARTUP" == true ]]; then
     zprof
@@ -86,7 +47,3 @@ if [[ "$PROFILE_STARTUP" == true ]]; then
     # restore stderr to the value saved in FD 3
     exec 2>&3 3>&-
 fi
-
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/Users/jyh/.sdkman"
-[[ -s "/Users/jyh/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/jyh/.sdkman/bin/sdkman-init.sh"
