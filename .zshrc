@@ -52,10 +52,12 @@ bindkey -e # emacs bindings
 export NVM_LAZY_LOAD=true
 export NVM_AUTO_USE=true
 
+source ~/.dir_colors
+
 source ~/.zsh/lib/git.zsh
 
 #source ~/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-#source ~/.zsh/plugins/zsh-nvm/zsh-nvm.plugin.zsh
+source ~/.zsh/plugins/zsh-nvm/zsh-nvm.plugin.zsh
 #source ~/.zsh/plugins/git.plugin.zsh
 source ~/.zsh/jyh.zsh-theme
 
@@ -64,14 +66,8 @@ source ~/.zsh/functions.zsh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# lazy-load wrapper
-function pyenv() {
-    eval "$( command pyenv init - )"
-    pyenv "$@"
-	if which pyenv-virtualenv-init > /dev/null; then 
-		eval "$(pyenv virtualenv-init -)"; 
-	fi
-}
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
 
 source ~/perl5/perlbrew/etc/bashrc
 

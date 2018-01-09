@@ -25,13 +25,23 @@ if [[ $IN_NIX_SHELL -eq 1 ]]; then
 else
     NIXPR=''
 fi
-PROMPT=${USERPR}${NIXPR}" "${PATHPR}" "${SYMBOLPR}" "
 
 GITINFO='$(git_prompt_info)'
-RPROMPT=${GITINFO}
-
 # git theming
 ZSH_THEME_GIT_PROMPT_PREFIX="%B"
 ZSH_THEME_GIT_PROMPT_SUFFIX=""
 ZSH_THEME_GIT_PROMPT_CLEAN=""
 ZSH_THEME_GIT_PROMPT_DIRTY="%F{red}%B*%b%f"
+
+# only use fancy prompt in terminals that can handle it
+# allows things to work in 'dumb' terminals (like emacs TRAMP) 
+case "$TERM" in
+stterm*|xterm*|rxvt*|eterm*|screen*)
+  PROMPT=${USERPR}${NIXPR}" "${PATHPR}" "${SYMBOLPR}" "
+  RPROMPT=${GITINFO}
+  ;;
+*)
+  PROMPT="> "
+  RPROMPT=""
+  ;;
+esac
