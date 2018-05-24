@@ -36,7 +36,7 @@ ZSH_THEME_GIT_PROMPT_DIRTY="%F{red}%B*%b%f"
 # only use fancy prompt in terminals that can handle it
 # allows things to work in 'dumb' terminals (like emacs TRAMP) 
 case "$TERM" in
-stterm*|xterm*|rxvt*|eterm*|screen*)
+st*|xterm*|rxvt*|eterm*|screen*)
   PROMPT=${USERPR}${NIXPR}" "${PATHPR}" "${SYMBOLPR}" "
   RPROMPT=${GITINFO}
   ;;

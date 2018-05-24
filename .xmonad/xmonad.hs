@@ -25,7 +25,7 @@ main = do
   dzenXmonad <- spawnPipe myDzenStatusBar
   dzenTop    <- spawnPipe myDzenTopBar
   xmonad $ ewmh desktopConfig {
-	 terminal = "stterm"
+	 terminal = "st"
 	, modMask = mod4Mask
         , layoutHook = myLayoutHook
         , logHook = dynamicLogWithPP $ myDzenPP dzenXmonad
