@@ -1,9 +1,9 @@
 [submodule "/Users/jyh/.emacs.d"]
 	path = /Users/jyh/.emacs.d
 	url = git@github.com:yamad/emacs-config.git
-[submodule "/Users/jyh/.oh-my-zsh"]
-	path = /Users/jyh/.oh-my-zsh
-	url = git@github.com:yamad/oh-my-zsh.git
 [submodule "seqlib"]
 	path = src/midos/midos-analysis-pipeline/lib/sequencing
 	url = git@bitbucket.org:kfisher-cl/sequencing
+[submodule "fzf/.fzf"]
+	path = fzf/.fzf
+	url = https://github.com/junegunn/fzf.git
