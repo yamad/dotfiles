@@ -32,11 +32,12 @@ source ~/.zsh/functions.zsh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 eval "$( pyenv init - )"	    # python version manager
-eval "$( pyenv virtualenv-init - )" # python virtualenv
 
 # keychain for ssh keys
 keychain --nogui -Q ~/.ssh/id_rsa ~/.ssh/jyh
 source ~/.keychain/$HOST-sh > /dev/null
+
+eval "$(direnv hook zsh)"
 
 if [[ "$PROFILE_STARTUP" == true ]]; then
     zprof

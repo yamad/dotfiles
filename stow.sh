@@ -1,3 +1,4 @@
+stow direnv
 stow fzf
 stow git
 stow misc

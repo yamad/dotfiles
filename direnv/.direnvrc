@@ -1,0 +1,52 @@
+# activate a pyenv-installed python
+use_pyenv-python() {
+    local python_version=$1
+    local python_root=$(pyenv root)/versions/${python_version}
+    load_prefix "$python_root"
+    if [[ -x "$python_root/bin/python" ]]; then
+        layout python "$python_root/bin/python"
+    else
+        echo "Error: $python_root/bin/python can't be executed."
+        exit
+    fi
+}
+
+# activate a conda environment
+use_conda() {
+    local CONDA_HOME="${HOME}/miniconda3/"
+    PATH_add "${CONDA_HOME}"/bin
+
+    if [[ -n "$1" ]]; then
+        local env_name="$1"
+        source activate ${env_name}
+    else
+        log_error "No conda environment specified"
+        exit 1
+    fi
+}
+
+# use venv to create a virtualenv
+# set VIRTUAL_ENV to set a custom location
+layout_python-venv() {
+    local python=${1:-python3}
+    unset PYTHONHOME
+
+    if [[ -n $VIRTUAL_ENV ]]; then
+        VIRTUAL_ENV=$(realpath "${VIRTUAL_ENV}")
+    else
+        local python_version
+        python_version=$("$python" -c "import platform; print(platform.python_version())")
+        if [[ -z $python_version ]]; then
+            log_error "Could not detect Python version"
+            return 1
+        fi
+        VIRTUAL_ENV=$PWD/.direnv/python-venv-$python_version
+    fi
+    export VIRTUAL_ENV
+
+    if [[ ! -d $VIRTUAL_ENV ]]; then
+        log_status "no venv found; creating $VIRTUAL_ENV"
+        "$python" -m venv "$VIRTUAL_ENV"
+    fi
+    PATH_add "$VIRTUAL_ENV/bin"
+}

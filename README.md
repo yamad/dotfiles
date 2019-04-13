@@ -15,8 +15,7 @@ full emacs and zsh files are in git submodules.
 or, to selectively install all dotfiles under a given directory, do
 
 ```
-stow vim  # install only vim-related dotfiles
-stow git  # install only git-related dotfiles
+> stow vim  # install only vim-related dotfiles
+> stow git  # install only git-related dotfiles
+# etc...
 ```
-
-Use [stow](https://gnu.org/software/stow) to symlink dotfiles into home directory
