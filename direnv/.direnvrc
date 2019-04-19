@@ -3,12 +3,10 @@ use_pyenv-python() {
     local python_version=$1
     local python_root=$(pyenv root)/versions/${python_version}
     load_prefix "$python_root"
-    if [[ -x "$python_root/bin/python" ]]; then
-        layout python "$python_root/bin/python"
-    else
+    if [[ ! -x "$python_root/bin/python" ]]; then
         echo "Error: $python_root/bin/python can't be executed."
-        exit
     fi
+    pyenv local ${python_version}
 }
 
 # activate a conda environment
