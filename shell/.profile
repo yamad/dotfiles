@@ -13,5 +13,5 @@ export NVM_DIR="$HOME/.nvm"
 if [ -e $HOME/.nix-profile/etc/profile.d/nix.sh ]; then . $HOME/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
 
 # sdkman (java) install manager
-export SDKMAN_DIR="/Users/jyh/.sdkman"
+export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s ~/.sdkman/bin/sdkman-init.sh ]] && source ~/.sdkman/bin/sdkman-init.sh
