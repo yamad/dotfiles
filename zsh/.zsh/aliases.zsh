@@ -9,6 +9,7 @@ alias inkscape-fix='wmctrl -r Inkscape -e 0,2560,1600,1920,1080'
 alias scribus-fix='ps2pdf -dCompressFonts=true -dPDFSETTINGS=/prepress -dEmbedAllFonts'
 alias spacemacs='HOME=~/.spacemacs emacs'
 alias rtags-capture="intercept-build"
+alias ipython-qt='ipython --matplotlib=qt'
 #alias tmux='direnv exec / tmux'
 if type nvim > /dev/null 2>&1; then
     alias vim='nvim'
