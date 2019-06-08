@@ -1,4 +1,5 @@
 stow direnv
+stow emacs
 stow fzf
 stow git
 stow misc

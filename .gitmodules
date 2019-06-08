@@ -4,3 +4,6 @@
 [submodule "fzf/.fzf"]
 	path = fzf/.fzf
 	url = https://github.com/junegunn/fzf.git
+[submodule "emacs/.emacs.d"]
+	path = emacs/.emacs.d
+	url = git@github.com:yamad/emacs-config.git
