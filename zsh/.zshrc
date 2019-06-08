@@ -46,7 +46,7 @@ setopt share_history          # share command history data
 eval "$( pyenv init - )"	    # python version manager
 
 # keychain for ssh keys
-keychain --nogui -Q ~/.ssh/id_rsa ~/.ssh/jyh
+eval `keychain --eval --agents ssh id_rsa`
 source ~/.keychain/$HOST-sh > /dev/null
 
 eval "$(direnv hook zsh)"
