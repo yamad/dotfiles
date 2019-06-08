@@ -17,14 +17,13 @@ compinit -i
 autoload -Uz vcs_info
 autoload -U git_prompt_info
 autoload -U zmv
-#source $ZSH/oh-my-zsh.sh
 
 bindkey -e # emacs bindings
 
 source ~/.zsh/lib/git.zsh
 source ~/.zsh/jyh.zsh-theme
-#source ~/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-#source ~/.zsh/plugins/git.plugin.zsh
+source ~/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/.zsh/plugins/git.plugin.zsh
 
 source ~/.zsh/aliases.zsh
 source ~/.zsh/functions.zsh
