@@ -9,6 +9,8 @@
     whitespace = fix
 [branch]
     autosetuprebase = always
+[merge]
+    conflictstyle = diff3
 [alias]
     br  = branch
     ci  = commit
