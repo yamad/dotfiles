@@ -3,8 +3,6 @@
     path = ~/.gitconfig.local
 [color]
     ui     = auto
-[core]
-    excludesfile = ~/.gitignore
 [apply]
     whitespace = fix
 [branch]
