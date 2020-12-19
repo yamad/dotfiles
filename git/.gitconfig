@@ -53,6 +53,8 @@
     lt = log --no-walk --tags --decorate=full --pretty='%h %d %s'
 [push]
 	default = simple
+[credential]
+	helper = cache
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
