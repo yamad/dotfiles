@@ -7,3 +7,6 @@
 [submodule "emacs/.emacs.d"]
 	path = emacs/.emacs.d
 	url = git@github.com:yamad/emacs-config.git
+[submodule "zsh/.zsh/powerlevel10k"]
+	path = zsh/.zsh/powerlevel10k
+	url = https://github.com/romkatv/powerlevel10k.git
