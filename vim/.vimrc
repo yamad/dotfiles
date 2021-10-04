@@ -58,7 +58,7 @@ Plug 'epmatsw/ag.vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'morhetz/gruvbox'
 Plug 'chriskempson/base16-vim'
-Plug 'Zenburn'
+"Plug 'Zenburn'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'} " fuzzy find
 if has('nvim')
   source ~/.vim/nvim_plugins.vim
@@ -133,8 +133,8 @@ au FileType mail set tw=60
 "au BufRead,BufNewFile * syntax match Search /\%<81v.\%>77v/
 "au BufRead,BufNewFile * syntax match ErrorMsg /\%>80v.\+/
 
-colorscheme desert256
+"colorscheme desert256
 if &diff
     colorscheme evening
 endif
-colorscheme base16-default-dark
+"colorscheme base16-default-dark
