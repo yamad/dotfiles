@@ -1,25 +1,20 @@
-Emacs.font: DejaVu Sans Mono:pixelsize=13
-Emacs.FontBackend: xft
+!Emacs.font: DejaVu Sans Mono:pixelsize=13
+!Emacs.FontBackend: xft
 
+Xft.dpi: 192
+Xft.autohint: false
 Xft.hinting: true
 Xft.hintstyle: hintfull
-Xft.antialias: rgba
+Xft.antialias: true
 Xft.rgba: rgb
-
-URxvt*perl-ext: matcher
-URxvt*matcher.button:   1
-URxvt*urlLauncher: chromium
-URxvt*secondaryScroll: true
-URxvt*loginShell: false
-URxvt*font: xft:DejaVu Sans Mono:pixelsize=13
-URxvt*letterSpace: -1
+Xft.lcdfilter: lcddefault
 
 XDvi.foreground: black
 XDvi.background: white
 
 dzen2.foreground: #eeeeee
 dzen2.background: #222222
-dzen2.font: xft:ProggyClean:pixelsize=12
+!dzen2.font: xft:ProggyClean:pixelsize=12
 
 !!! Gentoo colors
 *background: black
