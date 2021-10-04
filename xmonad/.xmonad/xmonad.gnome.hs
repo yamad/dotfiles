@@ -12,9 +12,9 @@ import XMonad.Layout.NoBorders (smartBorders)
 import XMonad.Layout.LayoutHints
 import XMonad.Layout.Tabbed
 
-myDzenStatusBar = "dzen2 -ta 'l' -w 150 -fn monospace:size=10 -dock"
+myDzenStatusBar = "dzen2 -ta 'l' -w 500 -fn monospace:size=12:dpi=192 -dock"
 myDzenTopBar = "conky -c $HOME/.xmonad/conky_dzen.lua | " ++
-	       "dzen2 -ta 'r' -x 150 -fn monospace:size=10 -dock"
+	       "dzen2 -ta 'r' -x 500 -fn monospace:size=12:dpi=192 -dock"
 myDzenFGColor = "#555555"
 myDzenBGColor = "#222222"
 myNormalFGColor = "#ffffff"
@@ -39,7 +39,6 @@ myDzenPP h = def
   , ppVisible = dzenColor myNormalFGColor myDzenBGColor . pad
   , ppCurrent = dzenColor myNormalBGColor myDzenFGColor . pad
   , ppOutput = hPutStrLn h
-
   , ppTitle = const ""
   , ppHiddenNoWindows = const ""
   }
