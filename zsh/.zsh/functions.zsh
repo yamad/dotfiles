@@ -20,3 +20,14 @@ cp_v() {
 webcam-record() {
     ffmpeg -f video4linux2 -r 30 -b 600k -i /dev/video1 -f alsa -i hw:1,0 -f mp4 $1
 }
+
+work-display-3() {
+    xrandr \
+        --dpi 324 \
+        --output eDP-1 --mode 3840x2160 --rate 60 --pos 0x0 \
+        --output DP-1 --off \
+        --output DP-2 --off \
+        --output DVI-I-2-2 --mode 1920x1080 --rate 60 --pos 5760x0 --scale 1x1 \
+        --output DVI-I-1-1 --mode 1920x1080 --rate 60 --pos 3840x0 --scale 1x1 --primary
+    echo "Xft.dpi: 324" | xrdb -merge
+}

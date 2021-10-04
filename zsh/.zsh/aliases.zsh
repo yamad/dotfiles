@@ -10,6 +10,8 @@ alias scribus-fix='ps2pdf -dCompressFonts=true -dPDFSETTINGS=/prepress -dEmbedAl
 alias spacemacs='HOME=~/.spacemacs emacs'
 alias rtags-capture="intercept-build"
 alias ipython-qt='ipython --matplotlib=qt'
+alias python-import-check="pylint --disable=all --enable=E0602,E0611,W0611"
+
 #alias tmux='direnv exec / tmux'
 if type nvim > /dev/null 2>&1; then
     alias vim='nvim'

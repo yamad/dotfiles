@@ -6,7 +6,7 @@ use_pyenv-python() {
     if [[ ! -x "$python_root/bin/python" ]]; then
         echo "Error: $python_root/bin/python can't be executed."
     fi
-    pyenv local ${python_version}
+    pyenv local $@
 }
 
 # activate a conda environment
