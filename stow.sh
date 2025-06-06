@@ -1,11 +1,11 @@
 stow direnv
 stow emacs
 stow fzf
-stow git
+stow git --target $HOME --dotfiles
 stow misc
 stow R
 stow shell
-stow tmux
+stow tmux --target $HOME --dotfiles
 stow vim
 stow xmonad
-stow zsh
+stow zsh --target $HOME --dotfiles
