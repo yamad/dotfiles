@@ -1,4 +1,4 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Enable Powerlevel10k instant prompt. Should stay close to the top of $ZDOTDIRrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
@@ -14,12 +14,11 @@ fi
 
 zmodload zsh/zprof  # profiling
 
-. $HOME/.asdf/asdf.sh
-
 # function path for zsh
-fpath=( ~/.zsh/lib $fpath )
-fpath=( ~/.zsh/completions $fpath )
-fpath=( ${ASDF_DIR}/completions $fpath )
+fpath+=(
+    $ZDOTDIR/lib
+    $ZDOTDIR/completions
+)
 
 autoload -U compinit
 compinit -i
@@ -30,18 +29,20 @@ autoload -U zmv
 
 bindkey -e # emacs bindings
 
-source ~/.zsh/lib/git.zsh
-#source ~/.zsh/jyh.zsh-theme
-source ~/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-source ~/.zsh/plugins/git.plugin.zsh
+source $ZDOTDIR/lib/git.zsh
+#source $ZDOTDIR/jyh.zsh-theme
+source $ZDOTDIR/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $ZDOTDIR/plugins/git.plugin.zsh
 
-source ~/.zsh/aliases.zsh
-source ~/.zsh/functions.zsh
+source $ZDOTDIR/aliases.zsh
+source $ZDOTDIR/functions.zsh
 
-source ~/.zsh/powerlevel10k/powerlevel10k.zsh-theme
+source $ZDOTDIR/powerlevel10k/powerlevel10k.zsh-theme
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f $ZDOTDIR/p10k.zsh ]] || source $ZDOTDIR/p10k.zsh
 
 ## History file configuration
-[ -z "$HISTFILE" ] && HISTFILE="$HOME/.zsh_history"
+[ -z "$HISTFILE" ] && HISTFILE="$ZDOTDIR/.zsh_history"
 HISTSIZE=50000
 SAVEHIST=10000
 
@@ -61,10 +62,10 @@ if command -v pyenv 1>/dev/null 2>&1; then
 fi
 
 # keychain for ssh keys
-eval `keychain --eval --agents ssh id_rsa`
-source ~/.keychain/$HOST-sh > /dev/null
-
-eval "$(direnv hook zsh)"
+if command -v keychain &> /dev/null; then
+    eval `keychain --eval --agents ssh id_rsa`
+    source ~/.keychain/$HOST-sh > /dev/null
+fi
 
 if [[ "$PROFILE_STARTUP" == true ]]; then
     zprof
@@ -72,21 +73,3 @@ if [[ "$PROFILE_STARTUP" == true ]]; then
     # restore stderr to the value saved in FD 3
     exec 2>&3 3>&-
 fi
-
-# opam configuration
-test -r /home/jyh/.opam/opam-init/init.zsh && . /home/jyh/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
-
-export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
-
-source /home/jyh/.config/broot/launcher/bash/br
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.zsh/p10k.zsh ]] || source ~/.zsh/p10k.zsh
-
-[ -z "usr/bin/aws_completer" ] && complete -C '/usr/bin/aws_completer' aws
-
-
-
-
-autoload -U +X bashcompinit && bashcompinit
-complete -o nospace -C /usr/bin/terraform terraform

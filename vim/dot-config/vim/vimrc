@@ -61,7 +61,7 @@ Plug 'chriskempson/base16-vim'
 "Plug 'Zenburn'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'} " fuzzy find
 if has('nvim')
-  source ~/.vim/nvim_plugins.vim
+  source ~/.config/vim/nvim_plugins.vim
 endif
 call plug#end()
 
@@ -112,7 +112,7 @@ augroup END
 augroup Python
 au!
 au FileType python inoremap # X#
-set tags+=~/.vim/tags/python.ctags
+set tags+=~/.config/vim/tags/python.ctags
 "au FileType python set omnifunc=pythoncomplete#Complete
 "au FileType python set fo=croq
 "au FileType python set foldenable
@@ -120,7 +120,7 @@ augroup END
 
 " HTML settings
 au BufRead,BufNewFile *.mako,*.mak,*.mko  set filetype=mako
-au FileType html,xml,xsl,mako source ~/.vim/scripts/closetag.vim
+au FileType html,xml,xsl,mako source ~/.config/vim/scripts/closetag.vim
 
 " Biological sequence file settings
 au BufRead,BufNewFile *.fasta   set filetype=fasta
