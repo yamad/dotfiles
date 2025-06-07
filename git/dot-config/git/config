@@ -19,6 +19,7 @@
     lgs = log --stat
     lg  = log --graph --oneline --decorate
     st  = status
+    stu = status --untracked-files=no
     dangling-branches = for-each-ref --format='%(if:equals=[gone])%(upstream:track)%(then)%(refname:short)%(end)' refs/heads
     cleanup = "!git branch --merged | grep  -v '\\*\\|master\\|main\\|develop' | xargs -n 1 git branch -d"
     publish = push -u origin HEAD

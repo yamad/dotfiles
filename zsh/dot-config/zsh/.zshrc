@@ -32,7 +32,6 @@ bindkey -e # emacs bindings
 source $ZDOTDIR/lib/git.zsh
 #source $ZDOTDIR/jyh.zsh-theme
 source $ZDOTDIR/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-source $ZDOTDIR/plugins/git.plugin.zsh
 
 source $ZDOTDIR/aliases.zsh
 source $ZDOTDIR/functions.zsh

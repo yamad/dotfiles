@@ -1,6 +1,6 @@
 #stow direnv
 stow emacs --target $HOME --dotfiles
-stow fzf
+#stow fzf
 stow git --target $HOME --dotfiles
 #stow misc
 #stow R

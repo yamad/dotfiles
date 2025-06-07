@@ -1,2 +1,5 @@
+# redirect to ~/.config/zsh
+# all other .zshenv config should go in ~/.config/zsh/.zshenv
+
 ZDOTDIR=${XDG_CONFIG_HOME:-$HOME/.config}/zsh
 . $ZDOTDIR/.zshenv

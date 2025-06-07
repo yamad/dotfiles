@@ -5,7 +5,10 @@
 # in ~/.zprofile
 # [[ -e ~/.profile ]] && emulate sh -c 'source ~/.profile'
 
-export PATH="$HOME/.local/bin:$HOME/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/bin:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
+
 export INFOPATH="$HOME/info:"
 export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig:$PKG_CONFIG_PATH"
 export EDITOR="emacsclient -a 'vim' -t"
@@ -16,20 +19,20 @@ if [[ -s "$HOME/.pyenv" ]]; then
     export PATH="$PYENV_ROOT/bin:$PATH"
 fi
 
+# uv setup
+[[ -e $HOME/.local/bin/env ]] && . "$HOME/.local/bin/env"
+
 # sdkman (java) install manager
-if [[ -s "$HOME/.sdkman" ]]; then
-    export SDKMAN_DIR="$HOME/.sdkman"
-    [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+
+# homebrew setup
+if [[ -e "/opt/homebrew/bin/brew" ]]; then
+    eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
-if command -v setxkpmap >& /dev/null; then
-    setxkbmap -option ctrl:nocaps
-fi
-
-export PATH="$HOME/.cargo/bin:$PATH"
-
+# nix setup
 [[ -e $HOME/.nix-profile/etc/profile.d/nix.sh ]] && . $HOME/.nix-profile/etc/profile.d/nix.sh
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/Jason.YamadaHanff/src/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/Jason.YamadaHanff/src/google-cloud-sdk/path.zsh.inc'; fi
-
