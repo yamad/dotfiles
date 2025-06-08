@@ -25,6 +25,7 @@ brew "git"
 brew "jq"
 brew "samtools"
 brew "stow"
+brew "ripgrep"
 brew "tmux"
 brew "zsh"
 cask "dash"
@@ -73,8 +74,8 @@ if ! command -v gcloud &> /dev/null; then
     GCLOUD_TAR="google-cloud-cli-darwin-arm.tar.gz"
     # Use curl instead of wget as wget might not be installed
     curl -o "${GCLOUD_TAR}" "https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/${GCLOUD_TAR}"
-    tar -xzf "${GCLOUD_TAR}" # This extracts to 'google-cloud-sdk'
-    ./google-cloud-sdk/install.sh --quiet --path-update true --usage-reporting false --rc-path "$HOME/.zshrc"
+    tar -xzf "${GCLOUD_TAR}" -C $HOME/.local/google-cloud-sdk # This extracts to 'google-cloud-sdk'
+    $HOME/.local/google-cloud-sdk/install.sh --quiet --path-update true --usage-reporting false --rc-path "$HOME/.zshrc"
     rm "${GCLOUD_TAR}" # Clean up the tarball
     echo "Google Cloud CLI installed. Please restart your shell or source ~/.zshrc for gcloud to be in your PATH."
 else
@@ -85,10 +86,9 @@ echo "Checking for SDKMAN!..."
 if ! command -v sdk &> /dev/null; then
     echo "SDKMAN! not found. Installing SDKMAN!..."
     curl -s "https://get.sdkman.io" | bash
-    # Source SDKMAN initialization script for the current shell session
-    export SDKMAN_DIR="$HOME/.sdkman"
+
     [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
-    echo "Installing Java 17.0.10-tem with SDKMAN!..."
+    echo "Installing Java with SDKMAN!..."
     sdk install java 21.0.7-tem
 else
     echo "SDKMAN! already installed."

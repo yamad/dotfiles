@@ -3,7 +3,7 @@
 # Shell-specific files should source this file, e.g.
 #
 # in ~/.zprofile
-# [[ -e ~/.profile ]] && emulate sh -c 'source ~/.profile'
+# [[ -e ~/.profile ]] && source ~/.profile
 
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/bin:$PATH"

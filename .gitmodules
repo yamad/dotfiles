@@ -1,9 +1,11 @@
-[submodule "fzf/.fzf"]
-	path = fzf/.fzf
-	url = https://github.com/junegunn/fzf.git
-[submodule "emacs/.emacs.d"]
+[submodule "emacs-config"]
 	path = emacs/dot-config/emacs
 	url = git@github.com:yamad/emacs-config.git
-[submodule "zsh/.zsh/powerlevel10k"]
-	path = zsh/.zsh/powerlevel10k
+[submodule "fzf"]
+	path = fzf/.fzf
+	url = https://github.com/junegunn/fzf.git
+    shallow = true
+[submodule "zsh-powerlevel10k"]
+	path = zsh/dot-config/zsh/plugins/powerlevel10k
 	url = https://github.com/romkatv/powerlevel10k.git
+    shallow = true

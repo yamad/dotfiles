@@ -29,14 +29,12 @@ autoload -U zmv
 
 bindkey -e # emacs bindings
 
-source $ZDOTDIR/lib/git.zsh
-#source $ZDOTDIR/jyh.zsh-theme
-source $ZDOTDIR/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-
 source $ZDOTDIR/aliases.zsh
 source $ZDOTDIR/functions.zsh
 
-source $ZDOTDIR/powerlevel10k/powerlevel10k.zsh-theme
+source $ZDOTDIR/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+source $ZDOTDIR/plugins/powerlevel10k/powerlevel10k.zsh-theme
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f $ZDOTDIR/p10k.zsh ]] || source $ZDOTDIR/p10k.zsh
 
