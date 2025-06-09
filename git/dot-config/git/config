@@ -1,6 +1,6 @@
 [include]
     # from http://stackoverflow.com/a/13615531/192780 (David Dobson)
-    path = ~/.gitconfig.local
+    path = ~/.config/git/config.local
 [color]
     ui     = auto
 [apply]
